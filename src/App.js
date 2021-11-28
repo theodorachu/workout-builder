@@ -6,16 +6,13 @@ import Workout from './components/Workout';
 function App() {
   const [options, setOptions] = useState({});
   function changeOption(category, option) {
-    let updated = options;
-    updated[category] = option;
-    setOptions(updated);
+    setOptions({...options, [category]: option});
   }
-
   return (
     <div className="App">
       <header className="header">
         <Toggles category="Focus Area" toggles={["Upper Body","Lower Body"]} onChange={changeOption}/>
-        <Workout type="Upper Body"/>
+        <Workout type={options}/>
       </header>
       <footer>
         <p>made with luv © {(new Date().getFullYear())}</p>

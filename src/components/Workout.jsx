@@ -56,25 +56,27 @@ function Workout(props) {
   ]
 
   let remixed = [];
-  if (props.type === "Upper Body") {
+  if (props.type["Focus Area"] === "Upper Body") {
     let remixedArms = arms.sort(() => Math.random() - 0.5).slice(0,3);
     let remixedAbs = abs.sort(() => Math.random() - 0.5).slice(0,3);
     remixed = [...remixedArms, ...remixedAbs];
 
-  } else if (props.type === "Lower Body") {
-    remixed = lower.sort(() => Math.random() - 0.5).slice(0,3);
+  } else if (props.type["Focus Area"] === "Lower Body") {
+    remixed = lower.sort(() => Math.random() - 0.5).slice(0,4);
   }
 
   return (
     <table style={{margin:"3rem auto 3rem auto"}}>
-      {remixed.map((e) => {
-        return(
-          <tr>
-            <td>{e.name}</td>
-            <td>{e.reps} Reps</td>
-          </tr>
-        );
-      })}
+      <tbody>
+        {remixed.map((e) => {
+          return(
+            <tr>
+              <td>{e.name}</td>
+              <td>{e.reps} Reps</td>
+            </tr>
+          );
+        })}
+      </tbody>
     </table>
   );
 }
