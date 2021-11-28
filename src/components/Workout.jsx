@@ -60,6 +60,8 @@ function Workout(props) {
     if (item === "Arms") {
       return arms.sort(() => Math.random() - 0.5).slice(0,4);
     } else if (item === "Abs") {
+      if(props.type["Focus Area"].length === 1)
+        return abs.sort(() => Math.random() - 0.5).slice(0,6);
       return abs.sort(() => Math.random() - 0.5).slice(0,4);
     } else {
       return lower.sort(() => Math.random() - 0.5).slice(0,4);
