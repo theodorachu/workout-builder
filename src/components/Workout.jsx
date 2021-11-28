@@ -73,8 +73,8 @@ function Workout(props) {
         {remixed.map((e) => {
           return(
             <tr key={e.name}>
-              <td>{e.name}</td>
-              <td>{e.reps} Reps</td>
+              <td style={{textAlign:"left"}}>{e.name}</td>
+              <td style={{textAlign:"right"}}>{e.reps} Reps</td>
             </tr>
           );
         })}
