@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="App">
       <header className="header">
-        <Toggles category="Focus Area" toggles={["Upper Body","Lower Body"]} onChange={changeOption}/>
+        <Toggles category="Focus Area" toggles={["Arms","Abs","Lower Body"]} onChange={changeOption}/>
         <Workout type={options}/>
       </header>
       <footer>

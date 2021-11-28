@@ -57,10 +57,10 @@ function Workout(props) {
 
   if(props.type["Focus Area"].length === 0) return null;
   let remixed = props.type["Focus Area"].map((item) => {
-    if (item === "Upper Body") {
-      let remixedArms = arms.sort(() => Math.random() - 0.5).slice(0,3);
-      let remixedAbs = abs.sort(() => Math.random() - 0.5).slice(0,3);
-      return [...remixedArms, ...remixedAbs];
+    if (item === "Arms") {
+      return arms.sort(() => Math.random() - 0.5).slice(0,4);
+    } else if (item === "Abs") {
+      return abs.sort(() => Math.random() - 0.5).slice(0,4);
     } else {
       return lower.sort(() => Math.random() - 0.5).slice(0,4);
     }
