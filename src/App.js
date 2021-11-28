@@ -1,24 +1,13 @@
 import './App.css';
-import React, {useState} from 'react';
-import ToggleButton from '@mui/material/ToggleButton';
-import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
+import React from 'react';
+import Toggles from "./components/Toggles";
 
 function App() {
-  const [body, setBody] = useState("");
-  const handleBody = (event) => {
-    setBody(event.target.value);
-  }
   
   return (
     <div className="App">
-      <header>
-        <ToggleButtonGroup
-          value={body}
-          exclusive
-          onChange={handleBody}>
-          <ToggleButton value="upper">Upper Body</ToggleButton>
-          <ToggleButton value="lower">Lower Body</ToggleButton>
-        </ToggleButtonGroup>
+      <header className="header">
+        <Toggles label="Body" values={["Upper Body","Lower Body"]}/>
       </header>
       <footer>
         <p>made with luv © {(new Date().getFullYear())}</p>
