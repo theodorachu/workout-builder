@@ -55,15 +55,17 @@ function Workout(props) {
     Exercise("Leg Extension", 15, true, false)
   ]
 
-  let remixed = [];
-  if (props.type["Focus Area"] === "Upper Body") {
-    let remixedArms = arms.sort(() => Math.random() - 0.5).slice(0,3);
-    let remixedAbs = abs.sort(() => Math.random() - 0.5).slice(0,3);
-    remixed = [...remixedArms, ...remixedAbs];
-
-  } else if (props.type["Focus Area"] === "Lower Body") {
-    remixed = lower.sort(() => Math.random() - 0.5).slice(0,4);
-  }
+  if(props.type["Focus Area"].length === 0) return null;
+  let remixed = props.type["Focus Area"].map((item) => {
+    if (item === "Upper Body") {
+      let remixedArms = arms.sort(() => Math.random() - 0.5).slice(0,3);
+      let remixedAbs = abs.sort(() => Math.random() - 0.5).slice(0,3);
+      return [...remixedArms, ...remixedAbs];
+    } else {
+      return lower.sort(() => Math.random() - 0.5).slice(0,4);
+    }
+  });
+  remixed = [].concat.apply([], remixed);
 
   return (
     <table style={{margin:"3rem auto 3rem auto"}}>

@@ -4,9 +4,9 @@ import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 
 function Toggles(props) {
   const [btnVal, setBtnVal] = useState("");
-  const handleChange = (event) => {
-    setBtnVal(event.target.value);
-    props.onChange(props.category, event.target.value);
+  const handleChange = (event, targets) => {
+    setBtnVal(targets);
+    props.onChange(props.category, targets);
   }
 
   return (
@@ -14,7 +14,6 @@ function Toggles(props) {
       <label style={{margin: "1rem"}}>{props.category}</label>
       <ToggleButtonGroup
         value={btnVal}
-        exclusive
         onChange={handleChange}
       >
         {props.toggles.map((e, index) => {

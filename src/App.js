@@ -4,7 +4,7 @@ import Toggles from './components/Toggles';
 import Workout from './components/Workout';
 
 function App() {
-  const [options, setOptions] = useState({});
+  const [options, setOptions] = useState({"Focus Area": []});
   function changeOption(category, option) {
     setOptions({...options, [category]: option});
   }
