@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react';
-import Toggles from "./components/Toggles";
+import Toggles from './components/Toggles';
 
 function App() {
   
