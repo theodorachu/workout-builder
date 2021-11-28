@@ -10,11 +10,12 @@ function Toggles(props) {
 
   return (
     <div>
-      <label>{props.category}</label>
+      <label style={{margin: "1rem"}}>{props.category}</label>
       <ToggleButtonGroup
         value={btnVal}
         exclusive
-        onChange={handleChange}>
+        onChange={handleChange}
+      >
         {props.toggles.map((e, index) => {
           return <ToggleButton key={index} value={e}>{e}</ToggleButton>;
         })}
