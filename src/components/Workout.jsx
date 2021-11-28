@@ -70,18 +70,22 @@ function Workout(props) {
   remixed = [].concat.apply([], remixed).sort(() => Math.random() - 0.5);
 
   return (
-    <table style={{margin:"3rem auto 3rem auto"}}>
-      <tbody>
-        {remixed.map((e) => {
-          return(
-            <tr key={e.name}>
-              <td style={{textAlign:"left"}}>{e.name}</td>
-              <td style={{textAlign:"right"}}>{e.reps} Reps</td>
-            </tr>
-          );
-        })}
-      </tbody>
-    </table>
+    <div style={{margin:"3rem auto"}}>
+      <h2>Workout</h2>
+      <p><i>Repeat 2x with a 5m break between sets.</i></p>
+      <table style={{margin: "auto"}}>
+        <tbody>
+          {remixed.map((e) => {
+            return(
+              <tr key={e.name}>
+                <td style={{textAlign:"left"}}>{e.name}</td>
+                <td style={{textAlign:"right"}}>{e.reps} Reps</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
   );
 }
 
