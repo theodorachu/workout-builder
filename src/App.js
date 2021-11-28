@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <header className="header">
-        <Toggles label="Body" values={["Upper Body","Lower Body"]}/>
+        <Toggles category="Focus Area" toggles={["Upper Body","Lower Body"]}/>
       </header>
       <footer>
         <p>made with luv © {(new Date().getFullYear())}</p>
