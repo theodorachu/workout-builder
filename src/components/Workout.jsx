@@ -65,7 +65,7 @@ function Workout(props) {
       return lower.sort(() => Math.random() - 0.5).slice(0,4);
     }
   });
-  remixed = [].concat.apply([], remixed);
+  remixed = [].concat.apply([], remixed).sort(() => Math.random() - 0.5);
 
   return (
     <table style={{margin:"3rem auto 3rem auto"}}>
