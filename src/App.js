@@ -15,7 +15,7 @@ function App() {
     <div className="App">
       <header className="header">
         <Toggles category="Focus Area" toggles={["Upper Body","Lower Body"]} onChange={changeOption}/>
-        <Workout />
+        <Workout type="Upper Body"/>
       </header>
       <footer>
         <p>made with luv © {(new Date().getFullYear())}</p>
