@@ -6,6 +6,7 @@ function Toggles(props) {
   const [btnVal, setBtnVal] = useState("");
   const handleChange = (event) => {
     setBtnVal(event.target.value);
+    props.onChange(props.category, event.target.value);
   }
 
   return (
