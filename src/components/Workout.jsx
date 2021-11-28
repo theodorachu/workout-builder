@@ -69,10 +69,11 @@ function Workout(props) {
   });
   remixed = [].concat.apply([], remixed).sort(() => Math.random() - 0.5);
 
+  const count = props.type["Focus Area"].length === 1 ? 3 : 2;
   return (
     <div style={{margin:"3rem auto"}}>
       <h2>Workout</h2>
-      <p><i>Repeat 2x with a 5m break between sets.</i></p>
+      {props.type["Focus Area"].length < 3 && <p><i>Repeat {count}x with a 5m break between sets.</i></p>}
       <table style={{margin: "auto"}}>
         <tbody>
           {remixed.map((e) => {
