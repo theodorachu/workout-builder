@@ -70,7 +70,7 @@ function Workout(props) {
       <tbody>
         {remixed.map((e) => {
           return(
-            <tr>
+            <tr key={e.name}>
               <td>{e.name}</td>
               <td>{e.reps} Reps</td>
             </tr>
