@@ -26,3 +26,7 @@ function App() {
 }
 
 export default App;
+
+// todo: add descriptions / links / pics -- how do i know what this workout is?
+// todo: instead of saying set repeats, actually visually repeat the set & put a break in between for the breaks
+// todo: people keep thinking the toggle should only be single select, how to make sure it can actually be multiselect
