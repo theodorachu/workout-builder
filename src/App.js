@@ -29,4 +29,3 @@ export default App;
 
 // todo: add descriptions / links / pics -- how do i know what this workout is?
 // todo: people keep thinking the toggle should only be single select, how to make sure it can actually be multiselect
-// todo: things that need to be repeated on each side should be made explicit
