@@ -49,10 +49,12 @@ function Workout(props) {
     Exercise("Single Leg Deadlift", 16, true, false),
     Exercise("Hip Thrust", 10, true, false),
     Exercise("Kettlebell Swing", 10, true, false),
-    Exercise("Clams", 20, false, true),
+    Exercise("Clamshell", 20, false, true),
     Exercise("Calf Raises", 16, true, true),
     Exercise("Leg Press", 15, true, false),
-    Exercise("Leg Extension", 15, true, false)
+    Exercise("Leg Extension", 15, true, false),
+    Exercise("Crab Walk", 8, true, true),
+    Exercise("Laying Down Side Leg Raise", 20, false, true)
   ]
 
   if(props.type["Focus Area"].length === 0) return null;
@@ -74,11 +76,37 @@ function Workout(props) {
   });
   remixed = [].concat.apply([], remixed).sort(() => Math.random() - 0.5);
 
-  const count = props.type["Focus Area"].length === 1 ? 3 : 2;
+  let count = 0;
+  if (props.type["Focus Area"].length === 1) {
+    count = 3;
+  } else if (props.type["Focus Area"].length === 2) {
+    count = 2;
+  } else {
+    count = 1;
+  }
+
   return (
     <div style={{margin:"3rem auto"}}>
-      <h2>Workout</h2>
-      {props.type["Focus Area"].length < 3 && <p><i>Repeat {count}x with a 3m break between sets.</i></p>}
+      <h1>Workout</h1>
+      {[...Array(count-1)].map(() => {
+        return(
+          <div>
+            <table style={{margin:"auto",maxWidth:"80%"}}>
+              <tbody>
+                {remixed.map((e) => {
+                  return(
+                    <tr key={e.name}>
+                      <td style={{textAlign:"left"}}>{e.name}</td>
+                      <td style={{textAlign:"right", whiteSpace:"nowrap"}}>{e.reps} Reps</td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+            <h2>Break for 3m</h2>
+          </div>
+        );
+      })}
       <table style={{margin:"auto",maxWidth:"80%"}}>
         <tbody>
           {remixed.map((e) => {
