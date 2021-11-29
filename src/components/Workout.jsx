@@ -74,13 +74,13 @@ function Workout(props) {
     <div style={{margin:"3rem auto"}}>
       <h2>Workout</h2>
       {props.type["Focus Area"].length < 3 && <p><i>Repeat {count}x with a 5m break between sets.</i></p>}
-      <table style={{margin: "auto"}}>
+      <table style={{margin:"auto",maxWidth:"80%"}}>
         <tbody>
           {remixed.map((e) => {
             return(
               <tr key={e.name}>
                 <td style={{textAlign:"left"}}>{e.name}</td>
-                <td style={{textAlign:"right"}}>{e.reps} Reps</td>
+                <td style={{textAlign:"right", whiteSpace:"nowrap"}}>{e.reps} Reps</td>
               </tr>
             );
           })}
