@@ -8,9 +8,8 @@ function Toggles(props) {
     setBtnVal(targets);
     props.onChange(props.category, targets);
   }
-
   return (
-    <div>
+    <div style={{margin: "1rem"}}>
       <label style={{margin: "1rem"}}>{props.category}</label>
       <ToggleButtonGroup
         value={btnVal}

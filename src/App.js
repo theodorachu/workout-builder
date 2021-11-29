@@ -2,9 +2,10 @@ import './App.css';
 import React, {useState} from 'react';
 import Toggles from './components/Toggles';
 import Workout from './components/Workout';
+import ExclusiveSwitch from './components/ExclusiveSwitch';
 
 function App() {
-  const [options, setOptions] = useState({"Focus Area": []});
+  const [options, setOptions] = useState({"Focus Area": [],"Uses Equipment": []});
   function changeOption(category, option) {
     setOptions({...options, [category]: option});
   }
@@ -12,6 +13,7 @@ function App() {
     <div className="App">
       <header className="header">
         <Toggles category="Focus Area" toggles={["Arms","Abs","Lower Body"]} onChange={changeOption}/>
+        <ExclusiveSwitch category="Uses Equipment" onChange={changeOption}/>
         <Workout type={options}/>
       </header>
       <footer>

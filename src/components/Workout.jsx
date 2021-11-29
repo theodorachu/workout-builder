@@ -58,13 +58,18 @@ function Workout(props) {
   if(props.type["Focus Area"].length === 0) return null;
   let remixed = props.type["Focus Area"].map((item) => {
     if (item === "Arms") {
-      return arms.sort(() => Math.random() - 0.5).slice(0,4);
+      if(props.type["Uses Equipment"])
+        return arms.filter((ex) => ex.canUseEquipment).sort(() => Math.random() - 0.5).slice(0,4);
+      return arms.filter((ex) => ex.canNoEquipment).sort(() => Math.random() - 0.5).slice(0,4);
     } else if (item === "Abs") {
-      if(props.type["Focus Area"].length === 1)
-        return abs.sort(() => Math.random() - 0.5).slice(0,6);
-      return abs.sort(() => Math.random() - 0.5).slice(0,4);
+      const end = props.type["Focus Area"].length === 1 ? 6 : 4;
+      if(props.type["Uses Equipment"])
+        return abs.filter((ex) => ex.canUseEquipment).sort(() => Math.random() - 0.5).slice(0,end);
+      return abs.filter((ex) => ex.canNoEquipment).sort(() => Math.random() - 0.5).slice(0,end);
     } else {
-      return lower.sort(() => Math.random() - 0.5).slice(0,4);
+      if(props.type["Uses Equipment"])
+        return lower.filter((ex) => ex.canUseEquipment).sort(() => Math.random() - 0.5).slice(0,4);
+      return lower.filter((ex) => ex.canNoEquipment).sort(() => Math.random() - 0.5).slice(0,4);
     }
   });
   remixed = [].concat.apply([], remixed).sort(() => Math.random() - 0.5);
@@ -73,7 +78,7 @@ function Workout(props) {
   return (
     <div style={{margin:"3rem auto"}}>
       <h2>Workout</h2>
-      {props.type["Focus Area"].length < 3 && <p><i>Repeat {count}x with a 5m break between sets.</i></p>}
+      {props.type["Focus Area"].length < 3 && <p><i>Repeat {count}x with a 3m break between sets.</i></p>}
       <table style={{margin:"auto",maxWidth:"80%"}}>
         <tbody>
           {remixed.map((e) => {
