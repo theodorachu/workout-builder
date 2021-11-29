@@ -1,3 +1,6 @@
+# View Project
+Head to https://workout-builder-nine.vercel.app/ to see this project live.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
