@@ -48,12 +48,12 @@ function Workout(props) {
     Exercise("Weighted Step Ups", 6, true, true, false),
     Exercise("Single Leg Deadlift", 8, true, true, false),
     Exercise("Hip Thrust", 10, false, true, false),
-    Exercise("Kettlebell Swing", 10, false, true, false),
+    Exercise("Kettlebell Swing", 12, false, true, false),
     Exercise("Clamshell", 10, true, false, true),
     Exercise("Calf Raises", 16, false, true, true),
     Exercise("Leg Press", 15, false, true, false),
     Exercise("Leg Extension", 15, false, true, false),
-    Exercise("Crab Walk", 4, true, true, true),
+    Exercise("Crab Walk", 5, true, true, true),
     Exercise("Laying Down Side Leg Raise", 10, true, false, true)
   ]
 
@@ -78,11 +78,11 @@ function Workout(props) {
 
   let count = 0;
   if (props.type["Focus Area"].length === 1) {
-    count = 3;
+    count = 4;
   } else if (props.type["Focus Area"].length === 2) {
-    count = 2;
+    count = 3;
   } else {
-    count = 1;
+    count = 2;
   }
 
   return (
