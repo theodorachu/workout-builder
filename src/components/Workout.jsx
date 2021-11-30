@@ -2,9 +2,10 @@ import React from 'react';
 
 function Workout(props) {
   const Exercise = (name, reps, perSide, canUseEquipment, canNoEquipment) => {return {name: name, reps: reps, perSide: perSide, canUseEquipment: canUseEquipment, canNoEquipment: canNoEquipment}};
+
   const arms = [
     Exercise("Bent Over Rows", 12, false, true, false),
-    Exercise("Overhead Press", 12, false, true, false),
+    Exercise("Overhead Press", 10, false, true, false),
     Exercise("Overhead Incline Press", 12, false, true, false),
     Exercise("Bench", 12, false, true, false),
     Exercise("Lat Pulldown", 8, false, true, false),
