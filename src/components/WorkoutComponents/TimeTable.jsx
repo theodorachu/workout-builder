@@ -10,7 +10,7 @@ function TimeTable({ex}) {
       <TableRow key={uuidv4()} firstCell={ex.name} secondCell={ex.time} />
     );
     rows.push(
-      <TableRow key={uuidv4()} firstCell="Rest" secondCell={ex.rest} />
+      <TableRow key={uuidv4()} firstCell={ex.restActivity} secondCell={ex.restTime} />
     );
   }
   return(

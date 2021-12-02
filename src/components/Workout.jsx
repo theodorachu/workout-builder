@@ -6,12 +6,12 @@ import { v4 as uuidv4 } from 'uuid';
 function Workout(props) {
 
   const Exercise = (name, length, canUseEquipment, canNoEquipment) => {return {name: name, length: length, canUseEquipment: canUseEquipment, canNoEquipment: canNoEquipment}};
-  const TimeExercise = (name, time, rest, sets, canUseEquipment, canNoEquipment) => {return {name: name, time: time, rest: rest, sets: sets, canUseEquipment: canUseEquipment, canNoEquipment: canNoEquipment}};
+  const TimeExercise = (name, time, restActivity, restTime, sets, canUseEquipment, canNoEquipment) => {return {name: name, time: time, restActivity: restActivity, restTime: restTime, sets: sets, canUseEquipment: canUseEquipment, canNoEquipment: canNoEquipment}};
 
   const cardio = [
-    TimeExercise("Sprint", "15 sec", "30 sec", 3, true, true),
-    TimeExercise("Stair Stepper", "3 min", "30 sec", 2, true, false),
-    TimeExercise("Endurance Run", "3 min", "30 sec", 2, true, true)
+    TimeExercise("Sprint", "15 sec", "Jog", "30 sec", 3, true, true),
+    TimeExercise("Stair Stepper", "3 min", "Rest", "30 sec", 2, true, false),
+    TimeExercise("Endurance Run", "3 min", "Rest", "30 sec", 2, true, true)
   ];
 
   const arms = [
@@ -53,13 +53,13 @@ function Workout(props) {
 
   const lower = [
     Exercise("Squat", "12 Reps", true, true),
-    Exercise("Reverse Lunge", "6 Reps / Side", true, true),
-    Exercise("Side Lunge", "6 Reps / Side", true, true),
-    Exercise("Curtsy Lunge", "6 Reps / Side", true, true),
+    Exercise("Reverse Lunge", "8 Reps / Side", true, true),
+    Exercise("Side Lunge", "8 Reps / Side", true, true),
+    Exercise("Curtsy Lunge", "8 Reps / Side", true, true),
     Exercise("Jump Squat", "10 Reps", false, true),
-    Exercise("Weighted Step Ups", "6 Reps / Side", true, false),
+    Exercise("Weighted Step Ups", "8 Reps / Side", true, false),
     Exercise("Single Leg Deadlift", "8 Reps / Side", true, false),
-    Exercise("Hip Thrust", "10 Reps", true, false),
+    Exercise("Hip Thrust", "12 Reps", true, false),
     Exercise("Kettlebell Swing", "12 Reps", true, false),
     Exercise("Clamshell", "10 Reps / Side", false, true),
     Exercise("Calf Raises", "16 Reps", true, true),
@@ -119,7 +119,7 @@ function Workout(props) {
           return <RepTable key={uuidv4()} remixed={remixed}/>;
         else if (item === "cardio")
           return <TimeTable key={uuidv4()} ex={cardioEx}/>;
-          return <h3 key={uuidv4()}>~ Break for 3 min ~</h3>;
+          return <h3 key={uuidv4()}>~ Break for 2 min ~</h3>;
       })
     );
   }
