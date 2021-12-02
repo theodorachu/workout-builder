@@ -126,7 +126,7 @@ function Workout(props) {
 
   return (
     <div style={{margin:"3rem auto"}}>
-      <h1>Workout</h1>
+      <h1>Workout Plan</h1>
       {printWorkout()}
     </div>
   );

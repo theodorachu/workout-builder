@@ -32,3 +32,4 @@ export default App;
 // todo: people keep thinking the toggle should only be single select, how to make sure it can actually be multiselect
 // todo: cardio only
 // todo: about page that specifies what sorts of workouts (HIIT)
+// todo: cardio on but no equipment doesn't really make sense -- how am i running in my house?
