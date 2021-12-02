@@ -30,3 +30,5 @@ export default App;
 
 // todo: add descriptions / links / pics -- how do i know what this workout is?
 // todo: people keep thinking the toggle should only be single select, how to make sure it can actually be multiselect
+// todo: cardio only
+// todo: about page that specifies what sorts of workouts (HIIT)
