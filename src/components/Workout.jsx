@@ -11,7 +11,7 @@ function Workout(props) {
   const cardio = [
     TimeExercise("Sprint", "15 sec", "Jog", "30 sec", 3, true, true),
     TimeExercise("Stair Stepper", "3 min", "Rest", "30 sec", 2, true, false),
-    TimeExercise("Endurance Run", "3 min", "Rest", "30 sec", 2, true, true)
+    TimeExercise("Jog", "3 min", "Walk", "45 sec", 2, true, true)
   ];
 
   const arms = [
@@ -21,7 +21,7 @@ function Workout(props) {
     Exercise("Bench", "12 Reps", true, false),
     Exercise("Lat Pulldown", "8 Reps", true, false),
     Exercise("Low to High", "6 Reps / Side", true, false),
-    Exercise("Squat & Press", "10 Reps", true, false),
+    Exercise("Overhead Press", "10 Reps", true, false),
     Exercise("Bicep Curl", "10 Reps", true, false),
     Exercise("Shoulder Shrug", "10 Reps", true, false),
     Exercise("Chest Fly", "10 Reps", true, false),
@@ -45,7 +45,7 @@ function Workout(props) {
     Exercise("Vertical Scissor Kicks", "16 Reps", true, true),
     Exercise("Horizontal Scissor Kicks", "16 Reps", false, true),
     Exercise("Leg Raises with Hip Lift", "10 Reps", false, true),
-    Exercise("Side Planks", "10 Reps / Side", true, true),
+    Exercise("Side Plank Hip Dips", "10 Reps / Side", true, true),
     Exercise("Mountain Climbers", "40 Reps", false, true),
     Exercise("Straight Leg Jackknifes", "8 Reps", true, true),
     Exercise("Bicycle Crunches", "10 Reps / Side", true, true)
